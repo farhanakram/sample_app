@@ -11,11 +11,11 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     # @user = User.new(params[:user])    # Not the final implementation!
     if @user.save
-      flash[:success] = "You are successfully login "
+      flash.now[:success] = "You are successfully login "
       redirect_to @user
       # Handle a successful save.
     else
-      flash[:error] = "Please fill out the fields mentioned below"
+      flash.now[:error] = "Please fill out the fields mentioned below"
       render 'new'
     end
   end
